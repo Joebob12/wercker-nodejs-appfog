@@ -25,5 +25,4 @@ script: |
   cd $HOME
   rm -fr nodeinstall
   node -v
-  gem update --system
   gem install af
