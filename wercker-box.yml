@@ -25,4 +25,4 @@ script: |
   cd $HOME
   rm -fr nodeinstall
   node -v
-  gem install af
+  sudo gem install af
