@@ -1,28 +1,13 @@
 name : ubuntu12.04-nodejs0.10-appfog
 version : 0.0.1
-inherits : wercker/ubuntu12.04-webessentials@0.0.3
-type : main
-platform : ubuntu@12.04
+# Inherit from the nodejs0.10 box from the wercker user
+inherits: wercker/ubuntu12.04-nodejs0.10@0.0.1
+type: main
+platform: ubuntu@12.04
 packages :
-  - nodejs@0.10.11
   - appfog
 keywords:
   - nodejs
   - appfog
 script: |
-  export NODEVERSION=0.10.11
-  sudo apt-get update
-  sudo apt-get install wget build-essential
-  cd $HOME
-  mkdir nodeinstall
-  cd nodeinstall
-  wget http://nodejs.org/dist/v$NODEVERSION/node-v$NODEVERSION.tar.gz
-  tar xzvf node-v$NODEVERSION.tar.gz
-  cd node-v$NODEVERSION
-  ./configure
-  make
-  sudo make install
-  cd $HOME
-  rm -fr nodeinstall
-  node -v
-  sudo gem install af
+  sudo gem install af --version "0.3.18.12"
